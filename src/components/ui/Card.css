@@ -1,0 +1,28 @@
+.card {
+    background-color: var(--color-white);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition-base);
+    overflow: hidden;
+}
+
+.card-hover:hover {
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-4px);
+}
+
+.card-clickable {
+    cursor: pointer;
+}
+
+.card-padding-sm {
+    padding: var(--spacing-sm);
+}
+
+.card-padding-md {
+    padding: var(--spacing-md);
+}
+
+.card-padding-lg {
+    padding: var(--spacing-lg);
+}

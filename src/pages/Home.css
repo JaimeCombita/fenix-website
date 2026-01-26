@@ -1,0 +1,222 @@
+.home-page {
+    width: 100%;
+}
+
+.categories-section {
+    background-color: #FFFFFF;
+}
+
+.categories-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+.about-section {
+    background-color: #F4F7F9;
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-xxl);
+    align-items: center;
+}
+
+.about-text {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.about-text .section-title {
+    text-align: left;
+}
+
+.about-text p {
+    font-size: 1.125rem;
+    line-height: 1.8;
+    color: #333333;
+}
+
+.check-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.check-list li {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    font-size: 1.0625rem;
+    color: #333333;
+}
+
+.check-list i {
+    color: var(--color-success);
+    font-size: 1.25rem;
+    flex-shrink: 0;
+}
+
+.about-image {
+    height: 400px;
+}
+
+.placeholder-image {
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-neutral);
+    border-radius: var(--border-radius-lg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-secondary);
+    opacity: 0.5;
+}
+
+.placeholder-image i {
+    font-size: 4rem;
+    margin-bottom: var(--spacing-md);
+}
+
+.services-section {
+    background-color: #F4F7F9;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-xl);
+    margin-bottom: var(--spacing-xl);
+}
+
+.service-card {
+    text-align: center;
+    padding: var(--spacing-xl);
+    background-color: #FFFFFF;
+}
+
+.service-icon {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto var(--spacing-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-accent);
+    border-radius: 50%;
+    color: var(--color-white);
+    font-size: 2rem;
+}
+
+.service-card h3 {
+    font-size: 1.375rem;
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-sm);
+}
+
+.service-card p {
+    color: #333333;
+    line-height: 1.6;
+}
+
+.cta-section {
+    background: linear-gradient(135deg, #0A3D62 0%, #E67E22 100%);
+    color: var(--color-white);
+    padding: var(--spacing-xxl) 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 30% 50%, rgba(230, 126, 34, 0.3) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.cta-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: var(--spacing-md);
+    color: var(--color-white);
+}
+
+.cta-section p {
+    font-size: 1.25rem;
+    margin-bottom: var(--spacing-xl);
+    opacity: 0.95;
+}
+
+@media (max-width: 968px) {
+    .categories-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-md);
+    }
+    
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-lg);
+    }
+    
+    .about-content {
+        gap: var(--spacing-lg);
+    }
+}
+
+@media (max-width: 768px) {
+    .about-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .about-image {
+        height: 300px;
+        order: -1;
+    }
+    
+    .about-text .section-title {
+        text-align: center;
+    }
+    
+    .categories-grid,
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .cta-section h2 {
+        font-size: 2rem;
+    }
+    
+    .cta-section p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .check-list li {
+        font-size: 1rem;
+    }
+    
+    .service-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 1.75rem;
+    }
+    
+    .service-card h3 {
+        font-size: 1.25rem;
+    }
+    
+    .cta-section h2 {
+        font-size: 1.75rem;
+    }
+}

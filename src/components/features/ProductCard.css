@@ -1,0 +1,124 @@
+.product-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 0;
+    overflow: hidden;
+}
+
+.product-image-link {
+    display: block;
+    text-decoration: none;
+}
+
+.product-image {
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+    background-color: var(--color-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition-base);
+}
+
+.product-card:hover .product-image img {
+    transform: scale(1.05);
+}
+
+.product-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-neutral);
+    font-size: 3rem;
+}
+
+.product-content {
+    padding: var(--spacing-md);
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.product-name {
+    font-size: 1.25rem;
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-xs);
+}
+
+.product-name a {
+    text-decoration: none;
+    color: inherit;
+    transition: var(--transition-base);
+}
+
+.product-name a:hover {
+    color: var(--color-accent);
+}
+
+.product-description {
+    color: #444444;
+    font-size: 0.9375rem;
+    line-height: 1.5;
+    margin-bottom: var(--spacing-md);
+    flex: 1;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.product-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding-top: var(--spacing-sm);
+    border-top: 1px solid var(--color-neutral);
+}
+
+.product-price {
+    font-size: 1.375rem;
+    font-weight: 700;
+    color: var(--color-accent);
+}
+
+@media (max-width: 768px) {
+    .product-image {
+        height: 200px;
+    }
+    
+    .product-name {
+        font-size: 1.125rem;
+    }
+    
+    .product-price {
+        font-size: 1.25rem;
+    }
+    
+    .product-footer {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--spacing-sm);
+    }
+}
+
+@media (max-width: 480px) {
+    .product-image {
+        height: 180px;
+    }
+    
+    .product-content {
+        padding: var(--spacing-sm);
+    }
+}
