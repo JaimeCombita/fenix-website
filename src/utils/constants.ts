@@ -4,7 +4,7 @@ export const COMPANY_INFO = {
   name: 'Fénix',
   fullName: 'Fénix Mobiliario Institucional',
   tagline: 'Mobiliario Institucional',
-  nit: '900.123.456-7',
+  nit: '900.123.456-8',
   email: 'contacto@fenix.com.co',
   phone: '+57 (1) 234 5678',
   whatsapp: '+57 300 123 4567',
