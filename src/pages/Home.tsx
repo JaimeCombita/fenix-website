@@ -15,7 +15,6 @@ export const HomePage: React.FC = () => {
         ctaLink="/contacto"
       />
 
-      {/* Categorías Destacadas */}
       <section className="section categories-section">
         <div className="container">
           <h2 className="section-title">Nuestros Productos</h2>
@@ -29,7 +28,6 @@ export const HomePage: React.FC = () => {
         </div>
       </section>
 
-      {/* Sobre la Empresa */}
       <section className="section about-section">
         <div className="container">
           <div className="about-content">
@@ -76,7 +74,6 @@ export const HomePage: React.FC = () => {
         </div>
       </section>
 
-      {/* Servicios Destacados */}
       <section className="section services-section">
         <div className="container">
           <h2 className="section-title">Nuestros Servicios</h2>
@@ -102,7 +99,6 @@ export const HomePage: React.FC = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
       <section className="cta-section">
         <div className="container">
           <h2>¿Listo para iniciar tu proyecto?</h2>

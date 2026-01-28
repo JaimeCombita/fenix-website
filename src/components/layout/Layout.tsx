@@ -3,20 +3,15 @@ import { Outlet } from 'react-router-dom';
 import { Header } from './Header';
 import { Navigation } from './Navigation';
 import { Footer } from './Footer';
+import { WhatsAppButton } from '../ui';
 import './Layout.css';
 
 export const Layout: React.FC = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
-  React.useEffect(() => {
-    // Interceptar el botón del menú del Header
-    const menuToggle = document.querySelector('.menu-toggle');
-    if (menuToggle) {
-      const handleClick = () => setMenuOpen(true);
-      menuToggle.addEventListener('click', handleClick);
-      return () => menuToggle.removeEventListener('click', handleClick);
-    }
-  }, []);
+  const handleToggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
 
   const handleCloseMenu = () => {
     setMenuOpen(false);
@@ -24,12 +19,13 @@ export const Layout: React.FC = () => {
 
   return (
     <div className="app-layout">
-      <Header />
+      <Header onMenuToggle={handleToggleMenu} />
       <Navigation isOpen={menuOpen} onClose={handleCloseMenu} />
       <main className="main-content">
         <Outlet />
       </main>
       <Footer />
+      <WhatsAppButton />
     </div>
   );
 };

@@ -43,7 +43,6 @@ export const Footer: React.FC = () => {
           <div className="footer-col">
             <h4>Soporte</h4>
             <ul className="footer-links">
-              <li><Link to="/faq">Preguntas Frecuentes</Link></li>
               <li><Link to="/politicas#garantias">Garantías</Link></li>
               <li><Link to="/politicas#terminos">Términos y Condiciones</Link></li>
               <li><Link to="/politicas#privacidad">Privacidad</Link></li>

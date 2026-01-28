@@ -1,3 +1,21 @@
+.nav-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1100;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.nav-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
 .nav-menu {
     position: fixed;
     top: 0;
@@ -8,7 +26,7 @@
     background-color: var(--color-white);
     box-shadow: var(--shadow-xl);
     padding: var(--spacing-lg);
-    z-index: var(--z-modal);
+    z-index: 1101;
     transition: right 0.3s ease;
     overflow-y: auto;
 }

@@ -23,7 +23,6 @@
     padding: var(--spacing-xxl) 0;
 }
 
-/* Sidebar */
 .catalog-sidebar {
     position: sticky;
     top: 100px;
@@ -121,7 +120,6 @@
     font-size: 1.125rem;
 }
 
-/* Responsive */
 @media (max-width: 968px) {
     .catalog-content {
         grid-template-columns: 1fr;

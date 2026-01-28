@@ -12,6 +12,22 @@ export const Navigation: React.FC<NavigationProps> = ({ isOpen, onClose }) => {
   const location = useLocation();
   const [expandedMenu, setExpandedMenu] = useState<string | null>(null);
 
+  React.useEffect(() => {
+    onClose();
+    setExpandedMenu(null);
+  }, [location.pathname]);
+
+  React.useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isOpen]);
+
   const toggleSubmenu = (path: string) => {
     setExpandedMenu(expandedMenu === path ? null : path);
   };
@@ -21,13 +37,19 @@ export const Navigation: React.FC<NavigationProps> = ({ isOpen, onClose }) => {
   };
 
   return (
-    <nav className={`nav-menu ${isOpen ? 'active' : ''}`}>
-      <div className="nav-header">
-        <h2>Menú</h2>
-        <button className="close-menu" onClick={onClose} aria-label="Cerrar menú">
-          <i className="fas fa-times"></i>
-        </button>
-      </div>
+    <>
+      <div 
+        className={`nav-overlay ${isOpen ? 'active' : ''}`}
+        onClick={onClose}
+        aria-hidden="true"
+      />
+      <nav className={`nav-menu ${isOpen ? 'active' : ''}`}>
+        <div className="nav-header">
+          <h2>Menú</h2>
+          <button className="close-menu" onClick={onClose} aria-label="Cerrar menú">
+            <i className="fas fa-times"></i>
+          </button>
+        </div>
 
       <ul className="nav-list">
         {NAV_LINKS.map((link) => (
@@ -88,6 +110,7 @@ export const Navigation: React.FC<NavigationProps> = ({ isOpen, onClose }) => {
           </a>
         </div>
       </div>
-    </nav>
+      </nav>
+    </>
   );
 };

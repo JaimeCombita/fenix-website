@@ -8,7 +8,6 @@ export const CatalogPage: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState<ProductCategory | 'all'>('all');
   const [products, setProducts] = useState<Product[]>([]);
 
-  // Mock data - En producción se reemplaza con API call
   useEffect(() => {
     const mockProducts: Product[] = [
       {
@@ -56,7 +55,6 @@ export const CatalogPage: React.FC = () => {
 
       <div className="container">
         <section className="catalog-content">
-          {/* Filter Sidebar */}
           <aside className="catalog-sidebar">
             <h3>Categorías</h3>
             <ul className="category-filter">
@@ -82,7 +80,6 @@ export const CatalogPage: React.FC = () => {
             </ul>
           </aside>
 
-          {/* Products Grid */}
           <div className="catalog-main">
             <div className="catalog-header">
               <h2>

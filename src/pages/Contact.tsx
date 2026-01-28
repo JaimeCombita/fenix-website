@@ -1,0 +1,112 @@
+import React from 'react';
+import { useSearchParams } from 'react-router-dom';
+import { ContactForm } from '../components/features';
+import { COMPANY_INFO } from '../utils/constants';
+import './Contact.css';
+
+export const ContactPage: React.FC = () => {
+  const [searchParams] = useSearchParams();
+  const productId = searchParams.get('producto');
+
+  return (
+    <div className="contact-page">
+      <section className="contact-hero">
+        <div className="container">
+          <h1>Contáctanos</h1>
+          <p className="contact-subtitle">
+            Estamos aquí para ayudarte. Envíanos tu consulta y te responderemos lo antes posible.
+          </p>
+        </div>
+      </section>
+
+      <section className="contact-content">
+        <div className="container">
+          <div className="contact-layout">
+            <div className="contact-form-section">
+              <h2>Envíanos un mensaje</h2>
+              {productId && (
+                <p className="product-notice">
+                  <i className="fas fa-info-circle"></i>
+                  Consulta sobre producto: {productId}
+                </p>
+              )}
+              <ContactForm productId={productId || undefined} />
+            </div>
+
+            <div className="contact-info-section">
+              <h2>Información de contacto</h2>
+              
+              <div className="info-card">
+                <div className="info-item">
+                  <i className="fas fa-phone"></i>
+                  <div>
+                    <h3>Teléfono</h3>
+                    <p>{COMPANY_INFO.phone}</p>
+                  </div>
+                </div>
+
+                <div className="info-item">
+                  <i className="fas fa-envelope"></i>
+                  <div>
+                    <h3>Email</h3>
+                    <p>{COMPANY_INFO.email}</p>
+                  </div>
+                </div>
+
+                <div className="info-item">
+                  <i className="fab fa-whatsapp"></i>
+                  <div>
+                    <h3>WhatsApp</h3>
+                    <p>{COMPANY_INFO.whatsapp}</p>
+                    <a 
+                      href={COMPANY_INFO.social.whatsapp} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="whatsapp-link"
+                    >
+                      Enviar mensaje
+                    </a>
+                  </div>
+                </div>
+
+                <div className="info-item">
+                  <i className="fas fa-map-marker-alt"></i>
+                  <div>
+                    <h3>Ubicación</h3>
+                    <p>{COMPANY_INFO.address}</p>
+                  </div>
+                </div>
+
+                <div className="info-item">
+                  <i className="fas fa-clock"></i>
+                  <div>
+                    <h3>Horario</h3>
+                    <p>{COMPANY_INFO.schedule}</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="social-links">
+                <h3>Síguenos en redes sociales</h3>
+                <div className="social-icons">
+                  <a href={COMPANY_INFO.social.facebook} target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                    <i className="fab fa-facebook"></i>
+                  </a>
+                  <a href={COMPANY_INFO.social.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                    <i className="fab fa-instagram"></i>
+                  </a>
+                  <a href={COMPANY_INFO.social.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                    <i className="fab fa-linkedin"></i>
+                  </a>
+                  <a href={COMPANY_INFO.social.whatsapp} target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+                    <i className="fab fa-whatsapp"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+};

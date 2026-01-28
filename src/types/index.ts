@@ -60,13 +60,6 @@ export interface QuoteRequest extends ContactForm {
   }[];
 }
 
-export interface FAQ {
-  id: string;
-  question: string;
-  answer: string;
-  category: 'envios' | 'garantias' | 'pagos' | 'licitaciones' | 'general';
-}
-
 export interface User {
   id: string;
   name: string;

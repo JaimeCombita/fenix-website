@@ -40,9 +40,9 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
         
         <div className="product-footer">
           <span className="product-price">{formatPrice(product.price)}</span>
-          <Link to={`/contacto?producto=${product.id}`}>
+          <Link to={`/producto/${product.id}`}>
             <Button variant="primary" size="sm">
-              Cotizar
+              Ver Detalles
             </Button>
           </Link>
         </div>
